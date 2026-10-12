@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this decision model, dataset, code, or notebook, please cite it."
+title: "Coordination-Adjusted Architecture Selection for LLM Agent Systems"
+type: software
+authors:
+  - family-names: Siripuram
+    given-names: Goutham
+date-released: 2026-10-12
+version: 0.2.0
+license: MIT
+repository-code: "https://github.com/GouthamSiripuram/agent-architecture-selection"
+abstract: "Reference implementation and simulation benchmark for architecture selection in LLM agent systems."

@@ -1,0 +1,27 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,booktabs,graphicx,hyperref}
+\title{Coordination-Adjusted Architecture Selection for LLM Agent Systems:\\A Reproducible Decision Model and Simulation Benchmark}
+\author{Goutham Siripuram\\Independent Researcher}
+\date{October 2026}
+\begin{document}\maketitle
+\begin{abstract}
+Multi-agent LLM systems can benefit from decomposition, specialization, parallelism, and verification, while additional agents introduce coordination overhead, error propagation, latency, and cost. We formalize architecture selection as a coordination-adjusted utility problem rather than treating agent count as an optimization objective. The v0.2 model evaluates six normalized task properties and compares single-agent, tool-augmented single-agent, planner-executor-verifier, and hierarchical multi-agent architectures. We release an executable reference model, independently varied synthetic scenarios, validation tests, and a sensitivity-analysis notebook. The coefficients are transparent hypotheses, not empirically fitted constants.
+\end{abstract}
+\section{Introduction}
+Agent systems increasingly use communicating specialists and orchestration. Surveys document broad growth in role specialization and multi-agent architectures \cite{guo2024multiagent}. The key engineering question is not whether multiple agents can collaborate, but when the benefits exceed coordination and reliability costs.
+\section{Decision Model}
+For task feature vector $x=(D,S,V,H,P,K)$, representing decomposability, specialization need, verification value, coordination burden, error-propagation risk, and resource sensitivity, architecture-specific utility is
+\[U_a=\alpha_aD+\beta_aS+\gamma_aV-\delta_aH-\epsilon_aP-\lambda\zeta_aK.\]
+The selected architecture is $a^*=\arg\max_a U_a$, subject to explicit handling of ties. Inputs are validated to be finite and within $[0,1]$.
+\section{Architecture Classes}
+We compare four classes: single agent; single agent with tools; planner-executor-verifier; and hierarchical multi-agent orchestration. Increasing organizational complexity is not assumed to be beneficial.
+\section{Synthetic Scenario Design}
+Version 0.2 independently varies the six design features using a seeded generator, avoiding the earlier confounding in which favorable decomposition conditions were mechanically coupled with lower coordination burden. The scenarios remain synthetic design probes rather than empirical labels.
+\section{Empirical Validation Plan}
+Future experiments should hold base models constant while varying architecture, execute repeated runs, measure success, token cost, latency, communication turns, duplicate work, recovery, and verification precision, fit or calibrate coefficients only on training tasks, and evaluate architecture-selection accuracy on held-out task families. AgentBench \cite{liu2024agentbench}, WebArena \cite{zhou2024webarena}, WorkArena \cite{drouin2024workarena}, and OSWorld \cite{xie2024osworld} are candidate environments.
+\section{Limitations}
+The coefficients are hypotheses rather than learned truths, and the linear model may omit interactions. Real benchmark calibration and ablation studies are required before predictive operational use.
+\section{Conclusion}
+Agent multiplicity should be treated as a cost-bearing architectural decision. This release makes that principle executable and falsifiable.
+\bibliographystyle{plain}\bibliography{references}\end{document}

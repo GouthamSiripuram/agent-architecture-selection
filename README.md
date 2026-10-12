@@ -36,4 +36,3 @@ Repository: https://github.com/GouthamSiripuram/agent-architecture-selection
 This is an AI-assisted methodology and synthetic demonstration release, not a peer-reviewed or empirically validated model benchmark. See `SEVEN_ROLE_INTERNAL_REVIEW.md` for the internal review and `VALIDATION.md` for release checks.
 
 The supplied `paper/main.pdf` is preserved, but its original build has unresolved citations because BibTeX was unavailable. Treat it as a draft. Rebuild from `paper/main.tex` and `paper/references.bib` with `pdflatex main`, `bibtex main`, then `pdflatex main` twice before paper submission.
-

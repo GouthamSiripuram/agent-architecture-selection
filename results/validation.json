@@ -1,0 +1,19 @@
+{
+  "python": "3.12.14",
+  "os": "Windows-11-10.0.26200-SP0",
+  "tests": "..........                                                               [100%]\n10 passed in 0.04s",
+  "paper_reproduction": "cost_aversion              0.0  0.5  1.0  2.0  4.0\nrecommended                                       \nsingle_agent                 0    0    1    1   13\nsingle_agent_tools           3    5    4   11   10\nplanner_executor_verifier   12   16   21   22   20\nhierarchical_multi_agent    33   27   22   14    5",
+  "notebook_code_cells": 2,
+  "notebook_method": "in-process IPython; no separate Jupyter kernel",
+  "generator_records_equal": true,
+  "citation_cff_schema_valid": true,
+  "versions": {
+    "pandas": "3.0.1",
+    "numpy": "2.5.4",
+    "pytest": "9.1.1",
+    "nbformat": "5.11.1",
+    "IPython": "9.17.1",
+    "matplotlib": "3.11.2",
+    "cffconvert": "2.0.0"
+  }
+}

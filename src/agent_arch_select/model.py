@@ -59,6 +59,9 @@ def score_architectures(features: Mapping[str,float], cost_aversion: float = 1.0
 
 def recommend_architecture(features: Mapping[str,float], cost_aversion: float = 1.0,
                            tie_tolerance: float = 1e-12) -> str:
+    tie_tolerance = float(tie_tolerance)
+    if not math.isfinite(tie_tolerance) or tie_tolerance < 0:
+        raise ValueError("tie_tolerance must be finite and non-negative")
     scores = score_architectures(features, cost_aversion)
     best = max(scores.values())
     winners = [a for a, s in scores.items() if abs(s-best) <= tie_tolerance]

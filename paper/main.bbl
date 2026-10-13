@@ -1,0 +1,84 @@
+\begin{thebibliography}{1}
+
+\bibitem{cemri2025failures}
+Mert Cemri, Melissa~Z. Pan, Shuyi Yang, Lakshya~A. Agrawal, Bhavya Chopra,
+  Rishabh Tiwari, Kurt Keutzer, Aditya Parameswaran, Dan Klein, Kannan
+  Ramchandran, Matei Zaharia, Joseph~E. Gonzalez, and Ion Stoica.
+\newblock {Why Do Multi-Agent LLM Systems Fail?}
+\newblock arXiv:2503.13657v3, 2025.
+\newblock \url{https://arxiv.org/abs/2503.13657v3}.
+
+\bibitem{drouin2024workarena}
+Alexandre Drouin, Maxime Gasse, Massimo Caccia, Issam~H. Laradji, Manuel
+  Del~Verme, Tom Marty, David Vazquez, Nicolas Chapados, and Alexandre Lacoste.
+\newblock {WorkArena: How Capable Are Web Agents at Solving Common Knowledge
+  Work Tasks?}
+\newblock In {\em Proceedings of the 41st International Conference on Machine
+  Learning, volume 235, pages 11642--11662}, 2024.
+\newblock \url{https://proceedings.mlr.press/v235/drouin24a.html}.
+
+\bibitem{guo2024multiagent}
+Taicheng Guo, Xiuying Chen, Yaqi Wang, Ruidi Chang, Shichao Pei, Nitesh~V.
+  Chawla, Olaf Wiest, and Xiangliang Zhang.
+\newblock {Large Language Model Based Multi-Agents: A Survey of Progress and
+  Challenges}.
+\newblock In {\em Proceedings of the Thirty-Third International Joint
+  Conference on Artificial Intelligence, pages 8048--8057}, 2024.
+\newblock \url{https://www.ijcai.org/proceedings/2024/890}.
+
+\bibitem{kim2026scaling}
+Yubin Kim, Ken Gu, Chanwoo Park, Chunjong Park, Samuel Schmidgall, A.~Ali
+  Heydari, Yao Yan, Zhihan Zhang, Yuchen Zhuang, Yun Liu, Mark Malhotra,
+  Paul~Pu Liang, Hae~Won Park, Yuzhe Yang, Xuhai Xu, Yilun Du, Shwetak Patel,
+  Tim Althoff, Daniel McDuff, and Xin Liu.
+\newblock {Towards a Science of Scaling Agent Systems}.
+\newblock arXiv:2512.08296v3 (originally posted 2025), 2026.
+\newblock \url{https://arxiv.org/abs/2512.08296v3}.
+
+\bibitem{liu2024agentbench}
+Xiao Liu, Hao Yu, Hanchen Zhang, Yifan Xu, Xuanyu Lei, Hanyu Lai, Yu~Gu,
+  Hangliang Ding, Kaiwen Men, Kejuan Yang, Shudan Zhang, Xiang Deng, Aohan
+  Zeng, Zhengxiao Du, Chenhui Zhang, Sheng Shen, Tianjun Zhang, Yu~Su, Huan
+  Sun, Minlie Huang, Yuxiao Dong, and Jie Tang.
+\newblock {AgentBench: Evaluating LLMs as Agents}.
+\newblock In {\em International Conference on Learning Representations}, 2024.
+\newblock \url{https://arxiv.org/abs/2308.03688}.
+
+\bibitem{schick2023toolformer}
+Timo Schick, Jane Dwivedi-Yu, Roberto Dess\`i, Roberta Raileanu, Maria Lomeli,
+  Eric Hambro, Luke Zettlemoyer, Nicola Cancedda, and Thomas Scialom.
+\newblock {Toolformer: Language Models Can Teach Themselves to Use Tools}.
+\newblock In {\em Advances in Neural Information Processing Systems, volume
+  36}, 2023.
+\newblock
+  \url{https://proceedings.neurips.cc/paper_files/paper/2023/hash/d842425e4bf79ba039352da0f658a906-Abstract-Conference.html}.
+
+\bibitem{xie2024osworld}
+Tianbao Xie, Danyang Zhang, Jixuan Chen, Xiaochuan Li, Siheng Zhao, Ruisheng
+  Cao, Jing~Hua Toh, Zhoujun Cheng, Dongchan Shin, Fangyu Lei, Yitao Liu,
+  Yiheng Xu, Shuyan Zhou, Silvio Savarese, Caiming Xiong, Victor Zhong, and Tao
+  Yu.
+\newblock {OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real
+  Computer Environments}.
+\newblock In {\em Advances in Neural Information Processing Systems, volume
+  37}, 2024.
+\newblock
+  \url{https://proceedings.neurips.cc/paper_files/paper/2024/hash/5d413e48f84dc61244b6be550f1cd8f5-Abstract-Datasets_and_Benchmarks_Track.html}.
+
+\bibitem{yao2023react}
+Shunyu Yao, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik Narasimhan,
+  and Yuan Cao.
+\newblock {ReAct: Synergizing Reasoning and Acting in Language Models}.
+\newblock In {\em International Conference on Learning Representations}, 2023.
+\newblock \url{https://arxiv.org/abs/2210.03629}.
+
+\bibitem{zhou2024webarena}
+Shuyan Zhou, Frank~F. Xu, Hao Zhu, Xuhui Zhou, Robert Lo, Abishek Sridhar,
+  Xianyi Cheng, Tianyue Ou, Yonatan Bisk, Daniel Fried, Uri Alon, and Graham
+  Neubig.
+\newblock {WebArena: A Realistic Web Environment for Building Autonomous
+  Agents}.
+\newblock In {\em International Conference on Learning Representations}, 2024.
+\newblock \url{https://arxiv.org/abs/2307.13854}.
+
+\end{thebibliography}

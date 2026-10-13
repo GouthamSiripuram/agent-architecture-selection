@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{cemri2025failures}
 Mert Cemri, Melissa~Z. Pan, Shuyi Yang, Lakshya~A. Agrawal, Bhavya Chopra,
@@ -7,6 +7,14 @@ Mert Cemri, Melissa~Z. Pan, Shuyi Yang, Lakshya~A. Agrawal, Bhavya Chopra,
 \newblock {Why Do Multi-Agent LLM Systems Fail?}
 \newblock arXiv:2503.13657v3, 2025.
 \newblock \url{https://arxiv.org/abs/2503.13657v3}.
+
+\bibitem{cobbe2021gsm8k}
+Karl Cobbe, Vineet Kosaraju, Mohammad Bavarian, Mark Chen, Heewoo Jun, Lukasz
+  Kaiser, Matthias Plappert, Jerry Tworek, Jacob Hilton, Reiichiro Nakano,
+  Christopher Hesse, and John Schulman.
+\newblock {Training Verifiers to Solve Math Word Problems}.
+\newblock arXiv:2110.14168v2, 2021.
+\newblock \url{https://arxiv.org/abs/2110.14168v2}.
 
 \bibitem{drouin2024workarena}
 Alexandre Drouin, Maxime Gasse, Massimo Caccia, Issam~H. Laradji, Manuel

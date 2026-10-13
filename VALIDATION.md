@@ -1,54 +1,49 @@
-# v0.3.0 publication validation
+# v0.4.0 publication validation
 
-Audit date: 2026-10-12. Base repository commit: `b243837cda4102268b5590fe238a254df294d2d0`.
+Audit date: 2026-10-13. The v0.3.0 methodology sources and validation records are preserved under validation/v0.3.0/; earlier v0.2.0 material and the original internal review remain unchanged.
 
-## Inspected material
+## Scope and implementation
 
-Inspected the current GitHub file tree and local README, CITATION.cff, LICENSE, paper sources and bibliography, original diagrams, all source modules, tests, data schemas/records, generators, notebooks, submission notes, and historical validation/internal-review documentation. Original data files and SVG diagrams remain preserved. The v0.2 NaN/range checks, unobserved-recovery handling, and independent architecture-scenario generation are present in implementation, not just README claims.
+Inspected the original research source, tests, data, notebooks, figures, manuscript and metadata in the preceding publication audit. The NaN, untested-recovery, finite/range, input-validation and independent-scenario-generation fixes remain present. The 26 existing framework tests passed again in the empirical environment (16 reliability and 10 architecture tests).
 
-## Corrections and remaining limits
+The new work adds actual local Hugging Face model execution, a bounded calculator, four concrete configurations, controlled faults, deterministic scoring, and a frozen analysis. Development used only two training examples. It corrected message formatting, explicit final-answer parsing, conflicting final-answer instructions, and the framework's blanket prohibition on repeating tool calls. These fixes preceded held-out execution. Thirteen study tests passed, including arithmetic bounds, parsing, zero-exposure handling, bootstrap denominators, and scripted timeout/retry/tool-call integration.
 
-The old PDF had unresolved citations; the current bibliography and references compile cleanly. Manuscripts now state their formulas, assumptions, synthetic evidence, limitations, related work, and generative-AI assistance. No real-agent experiment or human peer review was performed. The original internal review remains unchanged.
+## Empirical evidence
 
-Fixed absent validation of tie_tolerance. Added tests for invalid tolerances, exact ties, controlled analytical utilities, and monotonic response to resource aversion. The six scenario coordinates are independently drawn by the seeded generator, but real-world independence and predictive accuracy are not established. Coefficients remain hand-specified.
+- Exactly 720 unique planned test episodes: 360 per checkpoint; 288 clean, 216 timeout-assigned and 216 injection-assigned.
+- Two checkpoints, 12 GSM8K test questions, three seeds, and four concrete configurations. All inference was local; no paid compute.
+- 2837 actual completed model-generation calls and 538 calls reaching the calculator implementation.
+- 178 episode-level agent exceptions remain in the outcome denominator; no infrastructure errors occurred.
+- Exact task/model/configuration/condition/seed set verified, frozen files unchanged, timestamps after local freeze, token totals/bounds checked, and recorded calculator outputs recomputed.
+- No complete reference solution appeared in the first model prompt. Public-benchmark training contamination remains possible and is disclosed.
+- Primary answers were rescored against dataset labels. One marked arithmetic expression exposed a numeric-prefix parser limitation; adjudication confirmed it was already incorrect against the gold answer and all reported outcomes remain unchanged. The flag and adjudication are retained; see empirical/SCORING_AUDIT.md. No run was discarded or rerun.
+- Task-cluster intervals and frozen proxy-policy comparisons were computed without fitting to test outcomes. Zero exposure remains unobserved. No full FDAR aggregate or broad enterprise-validation claim is made.
+- The two companion papers use the same shared observations, not independent replications.
 
-The supplied MIT notice had a truncated disclaimer; the full standard disclaimer is restored and the original is archived. No license change to a different license family was made.
+Exact raw traces, episode CSV, summary tables, provenance, licenses and checksums are in empirical/. The post-run integrity audit is recorded separately from the frozen primary analysis. The original synthetic records remain synthetic and unchanged.
 
-## Executed checks
+## Publication checks
 
-```text
-..........                                                               [100%]
-10 passed in 0.04s
-```
+- Original synthetic notebooks and generators passed in v0.3.0; their scope is recorded in the preserved validation history. The new empirical notebook executed all 4 code cells in-process with IPython, with its plot embedded. No separate Jupyter kernel was launched.
+- CITATION.cff passed the CFF 1.2.0 schema check.
+- 10 used bibliography items have matching rendered entries. The GSM8K reference and official model/framework footnotes were verified against primary sources; prior unchanged references retain their documented audit.
+- Independent ZIP extraction and compilation with Tectonic 0.17.0 passed, using only packaged manuscript inputs and standard cached TeX resources.
+- No unresolved citations/references, missing bibliography/images, fatal errors, LaTeX warnings, missing characters, or overfull boxes in the final build. PDF text has no unresolved `??` or `[?]` markers.
+- All 10 pages were visually inspected. The author, tables, figures, references and links render correctly.
+- Source ZIP contains only: `main.tex`, `references.bib`, `main.bbl`, `tables/summary.tex`, `figures/sensitivity.pdf`, `tables/coefficients.tex`, `tables/empirical_clean.tex`, `tables/empirical_policy.tex`, `figures/empirical_clean.pdf`. It excludes datasets, traces, model weights, notebooks, code, internal reviews, credentials, strategy material and Git history.
 
-- Notebook: both code cells executed successfully in an in-process IPython interpreter. A separate Jupyter kernel was not launched. Reliability notebook re-executed after adding coverage stratification.
-- Paper reproduction script: generated the tables, PDF figure, input hashes and row-level summaries from supplied data/reference code.
-- Generator: generated records exactly equal the supplied 48 scenario records.
-- CITATION.cff: validated against the CFF 1.2.0 schema with cffconvert 2.0.0.
-- Bibliography: 9 used entries verified against primary records. Every cited key has exactly one bibliography entry and rendered item. See BIBLIOGRAPHY_AUDIT.md for source/version decisions.
-- Source package: extracted into a new temporary directory, compiled with Tectonic 0.17.0 using cached standard TeX resources and automatic BibTeX/reruns. Only packaged manuscript inputs were used. The dependency manifest listed main.tex, references.bib, required tables and the required PDF figure.
-- Final build: no LaTeX warnings, undefined citations/references, missing characters or overfull boxes in the final log; no fatal errors. A local font-configuration warning on an earlier verification run was resolved before final builds.
-- Final PDF: 6 pages, all visually inspected. Tables, plot, equations, author, links, bibliography and page numbers render correctly; extracted text contains no `??` or `[?]` markers.
-- ZIP contents: only `main.tex`, `references.bib`, `main.bbl`, `tables/summary.tex`, `figures/sensitivity.pdf`, `tables/coefficients.tex`. No raw dataset, notebook, code, review notes, git history, environment, credentials, or strategy material is packaged.
+## Final gate
 
-## Environment
+- [x] Cited works and bibliography resolve; figures and references render.
+- [x] Goutham Siripuram is the sole named author; no institutional affiliation invented.
+- [x] Actual local observations are separated from preserved synthetic demonstrations.
+- [x] No fabricated experiment, citation, DOI, arXiv identifier, or peer-review status.
+- [x] Correct repository URL and explicit generative-AI assistance disclosure.
+- [x] Independent source ZIP compilation and visual PDF inspection completed.
+- [x] Exact source ZIP and corresponding PDF supplied.
 
-Python 3.12.14; Windows-11-10.0.26200-SP0. Direct dependency pins are in requirements-reproduction.txt; this is not a complete transitive environment lock. Package versions and machine-readable outcomes are in results/validation.json. No clean-machine portability claim is made for Python notebooks; independent clean-folder LaTeX compilation was verified.
+ZIP SHA-256: `d3c671c84a69bf996998dedecfdc29d80a83cfaafec43729ec95cc3c968b0b85`
 
-## Final quality gate
+PDF SHA-256: `41bc4eefe7f1ea91a7c08d19826f06f858bd7fb6ca44366d4b7f4e553307e43a`
 
-- [x] Every citation resolves and bibliography renders.
-- [x] No unresolved LaTeX references or missing figures.
-- [x] Author is Goutham Siripuram; no institutional affiliation invented.
-- [x] Synthetic calculations explicitly identified; no fabricated empirical results.
-- [x] References audited; no fabricated project DOI or arXiv identifier.
-- [x] No claim of independent human peer review.
-- [x] Correct GitHub repository URL and AI-assistance disclosure.
-- [x] Source ZIP independently compiles; final PDF visually inspected.
-- [x] Exact source ZIP supplied in submission/.
-
-ZIP SHA-256: `01f635839697f6d153f7f6e21858bfc612a4c90c8800136402fd06ef34236bae`
-
-PDF SHA-256: `5a151651ab59355b68c2c78af906d467be7be9987599395d54ceb419def66412`
-
-Status: technically ready for author inspection and manual arXiv submission. This is not a statement of arXiv acceptance or empirical scientific validation. Goutham must review and approve all claims and confirm the affiliation/license before submitting. No arXiv submission was attempted. GitHub release notes are prepared; no tag or release was created by this workflow.
+Status: technically ready for author review and manual arXiv submission. This is a bounded empirical case study, not validation of every methodological assumption or an acceptance claim. No arXiv submission was attempted. Goutham must inspect the final claims and choose the submission license/category; any endorsement or moderation remains with arXiv. GitHub release notes are prepared; no tag, release or Zenodo DOI is claimed here.

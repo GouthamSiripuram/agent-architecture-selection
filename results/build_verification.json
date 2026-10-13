@@ -1,19 +1,22 @@
 {
   "artifact": "agent_architecture_selection",
-  "pages": 6,
-  "citations": 9,
+  "pages": 10,
+  "citations": 10,
   "source_files": [
     "main.tex",
     "references.bib",
     "main.bbl",
     "tables/summary.tex",
     "figures/sensitivity.pdf",
-    "tables/coefficients.tex"
+    "tables/coefficients.tex",
+    "tables/empirical_clean.tex",
+    "tables/empirical_policy.tex",
+    "figures/empirical_clean.pdf"
   ],
   "clean_zip_compile": true,
   "unresolved_references": false,
   "latex_warnings": false,
-  "zip_sha256": "01f635839697f6d153f7f6e21858bfc612a4c90c8800136402fd06ef34236bae",
-  "pdf_sha256": "5a151651ab59355b68c2c78af906d467be7be9987599395d54ceb419def66412",
-  "visual_inspection": "passed: all six rendered pages inspected; final architecture title page rechecked and other five pages pixel-identical after title adjustment"
+  "zip_sha256": "d3c671c84a69bf996998dedecfdc29d80a83cfaafec43729ec95cc3c968b0b85",
+  "pdf_sha256": "41bc4eefe7f1ea91a7c08d19826f06f858bd7fb6ca44366d4b7f4e553307e43a",
+  "visual_inspection": "passed: all 10 rendered pages inspected"
 }

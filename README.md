@@ -1,70 +1,27 @@
-# Coordination-Adjusted Architecture Selection for LLM Agent Systems: A Reproducible Decision Model and Local Model Case Study
+# Question-Only Selection of Bounded Reasoning Workflows: Baselines, Budget Transfer, and a Local Evaluation
 
-**Author: Goutham Siripuram | Version: 0.4.0**
+Author: Goutham Siripuram. Research revision **0.5.0**. Prepared preprint and submission materials; **not submitted to arXiv or TMLR**, and not peer reviewed.
 
-**Scientific status: proposed methodology, preserved synthetic demonstrations, and a separate local empirical case study.** The original data remain synthetic. `empirical/results/` contains measurements from 720 actual local model episodes on 12 GSM8K tasks, with two small checkpoints, three seeds, four configurations, and controlled tool faults. This is limited empirical evidence, not enterprise validation or calibrated methodology. The current preprint is prepared for author review and manual arXiv submission; it has not been submitted to arXiv, and no arXiv ID or DOI is claimed.
+Choosing a reasoning workflow from a question requires evidence that selection improves on a simpler fixed policy. We evaluate a question-only ridge baseline against a training-selected constant workflow using two local checkpoints, four workflows, two seeds, separate GSM8K training and test cohorts, and SVAMP transfer questions. The 4,096 recorded executions include a larger output-allowance condition on GSM8K. At the primary 512-token allowance, router-minus-constant utility is -0.00894 for Qwen3 and -0.04075 for Qwen2.5; the study does not establish a consistent routing advantage. A separately specified parsing heuristic also changes the interpretation of Qwen2.5 workflow rankings. The contribution is a constrained negative evaluation with explicit training isolation, budget transfer, and scoring sensitivity, rather than a new routing algorithm. The results motivate checking simple baselines and outcome definitions before attributing gains to workflow selection.
 
-The decision model compares four architecture classes using six normalized task descriptors. Coefficients are hand-specified hypotheses. Recommendation counts describe the simulation, not real architecture superiority or predictive accuracy.
+## Evidence and limits
 
-## Paper and submission files
+This revision uses actual local Qwen3-0.6B and Qwen2.5-1.5B-Instruct executions on public arithmetic benchmark questions. It is a bounded case study, not production or enterprise validation. Earlier synthetic demonstrations remain synthetic and are preserved in the original directories and Git history. The v0.4 pilot is historical and is not pooled into v0.5 primary results. The related paper shares research ancestry and software but has different primary tasks and interventions.
 
-- [Compiled preprint](paper/main.pdf)
-- [Self-contained arXiv source ZIP](submission/agent_architecture_selection_arxiv_submission.zip)
+## Files and reproduction
+
+- [Preprint PDF](submission/v0.5.0/agent_architecture_selection_preprint.pdf)
+- [Self-contained arXiv source](submission/v0.5.0/agent_architecture_selection_arxiv_submission.zip)
+- [Execution evidence and frozen code](submission/v0.5.0/agent_architecture_selection_tmlr_supplement.zip)
+- [Validation report](study_v05/FINAL_VALIDATION.md)
 - [arXiv metadata](ARXIV_METADATA.md)
-- [Bibliography verification](BIBLIOGRAPHY_AUDIT.md) and [claim audit](CLAIM_AUDIT.md)
-- [Validation record](VALIDATION.md) and [release notes](RELEASE_NOTES.md)
 
-Suggested primary category: **cs.MA**, with **cs.AI** as a secondary category. The author must review the manuscript and arXiv-generated PDF before manually submitting. Technical readiness does not imply acceptance or validation of every methodological assumption.
+Extract the evidence ZIP into a separate directory. It contains completed records, unchanged source hashes, task data, dependency versions, provenance and notices. Install requirements-lock.txt in an isolated environment. Run `python -m pytest test_research.py test_analysis.py`, then `python analysis.py --study architecture`. This recomputes results without inference. Full local-inference instructions are in its README. Never overwrite supplied records or run duplicate GPU jobs.
 
-## Reproduce the calculations
+The published source ZIP compiled independently. Identified and anonymous PDFs have been visually checked. An anonymous review PDF is supplied separately to the author; the public preprint is not the anonymous upload. Author review and submission declarations remain required. Technical checks do not guarantee acceptance.
 
-Use Python 3.12 for the recorded environment (the package supports Python >=3.10). From the repository root:
+## Citation and authorship
 
-```bash
-python -m venv .venv
-# Activate .venv using your platform's activation command.
-python -m pip install -r requirements-reproduction.txt
-python -m pip install -e .
-python -m pytest -q
-python scripts/reproduce_paper.py
-```
+Cite Goutham Siripuram, *Question-Only Selection of Bounded Reasoning Workflows: Baselines, Budget Transfer, and a Local Evaluation*, research software/preprint revision 0.5.0, 2026, this repository. See CITATION.cff. No DOI or arXiv ID has been assigned.
 
-The last command regenerates the manuscript tables, sensitivity figure, and machine-readable summaries in `results/`. Direct reproduction dependencies are version-pinned; this is not a full transitive lockfile. Optional interactive notebook support is available with `python -m pip install -e ".[validation]"`, then `jupyter notebook notebooks/reproduce_results.ipynb`.
-
-Run `python scripts/generate_architecture_scenarios.py` to regenerate the 48 scenarios using seed 260907. Independent draws remove the earlier hard-wired feature coupling; they do not establish independence of real task properties.
-
-## Real local-agent study
-
-See [the empirical protocol and reproduction instructions](empirical/README.md). The study uses Qwen3-0.6B and SmolLM2-360M-Instruct through Hugging Face smolagents, running locally on a 4 GB GPU. No paid inference was used. Failed attempts remain in the results; unexposed tool faults do not count as successful recovery. The two companion repositories contain the **same shared study**, not independent replications.
-
-- [Frozen protocol](empirical/PROTOCOL.md) and [hash manifest](empirical/FREEZE.json)
-- [Episode measurements](empirical/results/episodes.csv) and [condition summaries](empirical/results/condition_summary.csv)
-- [Fixed-selector comparison](empirical/results/selector_policy_evaluation.csv)
-- Full compressed traces and checksums are in `empirical/results/`.
-
-The study observes only part of the reliability framework, so no complete five-dimensional score is imputed. The architecture selector uses unvalidated question-only proxies and unchanged coefficients; it has not been calibrated. Exact-answer parsing, small models, limited role budgets, public-data contamination, and only 12 task clusters limit interpretation. Results do not establish a general advantage for additional agents.
-
-Run `python scripts/reproduce_empirical_paper.py` to regenerate empirical tables/figures from released summaries. Run the frozen analysis and inference separately as documented in `empirical/README.md`. Core-package tests use `tests/`; empirical tests require the separate model environment and are invoked explicitly with `python -m pytest empirical -q`.
-
-## Build the paper
-
-From `paper/`, use a standard LaTeX installation:
-
-```bash
-pdflatex -interaction=nonstopmode -halt-on-error main.tex
-bibtex main
-pdflatex -interaction=nonstopmode -halt-on-error main.tex
-pdflatex -interaction=nonstopmode -halt-on-error main.tex
-```
-
-The release uses Tectonic 0.17.0 (automatic bibliography and LaTeX reruns): `tectonic --untrusted --keep-logs --keep-intermediates main.tex`. The source uses standard article/LaTeX packages and PDF figures. Submission ZIPs include `main.bbl` as well as `references.bib`.
-
-## How to cite
-
-Use [CITATION.cff](CITATION.cff) or cite: Goutham Siripuram (2026), *Coordination-Adjusted Architecture Selection for LLM Agent Systems: A Reproducible Decision Model and Local Model Case Study*, methodology preprint and software, version 0.4.0, https://github.com/GouthamSiripuram/agent-architecture-selection. Cite the exact commit used when no release tag is available. No DOI should be added until one is actually issued.
-
-## Provenance and limitations
-
-Generative-AI tools assisted with drafting, editing, code review, and internal technical validation. Goutham Siripuram is the sole human author and is responsible for the claims and artifacts. The seven-role AI-assisted internal review is **not independent human peer review**.
-
-The original [internal review](SEVEN_ROLE_INTERNAL_REVIEW.md) remains unchanged. Earlier build warnings, draft sources/PDF, and validation records are preserved in `validation/v0.2.0/`; their historical status does not describe the current paper. The v0.3.0 manuscript and validation records are preserved in `validation/v0.3.0/`. Real local-agent runs are now included; full construct validation, coefficient calibration, and independent evaluation remain outstanding.
+Goutham identifies both research ideas as his. Generative AI assisted drafting, code development, editing and internal technical validation; the human author is responsible for the manuscript and its scientific claims. The historical seven-role AI review was not independent human peer review. Original code remains under the repository MIT license; third-party material retains its notices. Manuscript licensing is an author submission decision; CC BY 4.0 is recommended for TMLR compatibility.

@@ -1,0 +1,52 @@
+\begin{thebibliography}{5}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Cobbe et~al.(2021)Cobbe, Kosaraju, Bavarian, Chen, Jun, Kaiser,
+  Plappert, Tworek, Hilton, Nakano, Hesse, and Schulman]{cobbe2021gsm8k}
+Karl Cobbe, Vineet Kosaraju, Mohammad Bavarian, Mark Chen, Heewoo Jun, Lukasz
+  Kaiser, Matthias Plappert, Jerry Tworek, Jacob Hilton, Reiichiro Nakano,
+  Christopher Hesse, and John Schulman.
+\newblock {Training Verifiers to Solve Math Word Problems}.
+\newblock arXiv:2110.14168v2, 2021.
+\newblock \url{https://arxiv.org/abs/2110.14168v2}.
+
+\bibitem[Patel et~al.(2021)Patel, Bhattamishra, and Goyal]{patel2021svamp}
+Arkil Patel, Satwik Bhattamishra, and Navin Goyal.
+\newblock Are {NLP} models really able to solve simple math word problems?
+\newblock In \emph{Proceedings of the 2021 Conference of the North American
+  Chapter of the Association for Computational Linguistics: Human Language
+  Technologies}, pp.\  2080--2094. Association for Computational Linguistics,
+  2021.
+\newblock \doi{10.18653/v1/2021.naacl-main.168}.
+\newblock URL \url{https://aclanthology.org/2021.naacl-main.168/}.
+
+\bibitem[Sun et~al.(2026)Sun, Shang, Liu, Yang, Xie, Qiu, and
+  Dai]{sun2026cborchestrator}
+Jiahang Sun, Zhiwei Shang, Zhipiao Liu, Hongwei Yang, Guoqing Xie, Shuang Qiu,
+  and Zhongxiang Dai.
+\newblock {CB-Orchestrator}: Adaptive workflow optimization for {LLM} agents
+  via contextual bandits, 2026.
+\newblock URL \url{https://arxiv.org/abs/2610.13064v1}.
+\newblock Version 1.
+
+\bibitem[Tran \& Kiela(2026)Tran and Kiela]{tran2026equalbudget}
+Dat Tran and Douwe Kiela.
+\newblock Single-agent {LLMs} outperform multi-agent systems on multi-hop
+  reasoning under equal thinking token budgets, 2026.
+\newblock URL \url{https://arxiv.org/abs/2604.02460v2}.
+\newblock Version 2.
+
+\bibitem[Xu et~al.(2026)Xu, Koesdwiady, Bei, Han, Huang, Wang, Chen, Wang,
+  Wang, Li, and Ding]{xu2026oneflow}
+Jiawei Xu, Arief Koesdwiady, Sisong Bei, Yan Han, Baixiang Huang, Dakuo Wang,
+  Yutong Chen, Zheshen Wang, Peihao Wang, Pan Li, and Ying Ding.
+\newblock Rethinking the value of multi-agent workflow: A strong single agent
+  baseline, 2026.
+\newblock URL \url{https://arxiv.org/abs/2601.12307v1}.
+\newblock Version 1.
+
+\end{thebibliography}

@@ -1,33 +1,23 @@
-# arXiv submission metadata
-
-Title: Coordination-Adjusted Architecture Selection for LLM Agent Systems: A Reproducible Decision Model and Local Model Case Study
-
-Author: Goutham Siripuram
-
-Affiliation: Independent Researcher (author to confirm at submission).
-
-Suggested primary category: cs.MA (Multiagent Systems), because the core subject is coordinated agent architectures and their tradeoffs.
-
-Suggested secondary category: cs.AI (Artificial Intelligence). No cs.LG cross-list is proposed: this release does not fit a learning model. Classification recommendation follows https://arxiv.org/category_taxonomy and remains subject to arXiv moderation.
-
-## Abstract
-
-This paper proposes an executable linear architecture decision model over six normalized task descriptors and four agent-architecture classes. Its coefficients are hand-specified hypotheses. We retain 48 seeded synthetic scenarios for sensitivity analysis and add 720 actual local episodes with two small Hugging Face checkpoints on 12 GSM8K questions. Four concrete configurations share a 512-generated-token budget, with three seeds and controlled tool-fault conditions. Across the eight clean model–configuration cells, exact-answer success ranges from 0/36 to 13/36 attempts. A frozen question-only proxy rubric evaluates the unchanged selector against constant-architecture policies using observed accuracy and generated-token use. The rubric selects planner–executor–verifier for 11 of 12 questions and hierarchical orchestration for one. This is a limited test of one operationalization, not calibration of the descriptors or coefficients. Released traces, task-cluster uncertainty, and observed-utility regret make unfavorable outcomes and identification limits inspectable. No general advantage for additional agents is claimed.
-
-## Comments
-
-Methodology preprint with synthetic demonstrations and a local model case study; software v0.4.0. 10 pages including references. Shared empirical data and source code are available in the repository.
-
-## License recommendation
-
-Recommend arXiv's non-exclusive distribution license for this submission, subject to the author's choice and any future venue requirements. The repository retains its existing license. No license selection has been submitted on the author's behalf. Review https://info.arxiv.org/help/license/index.html before choosing.
-
-Keywords: LLM agents; multi-agent systems; architecture selection; coordination overhead; sensitivity analysis; synthetic simulation.
-
-GitHub repository: https://github.com/GouthamSiripuram/agent-architecture-selection
-
-## AI-assistance disclosure recommendation
-
-Generative-AI tools assisted with drafting, editing, experiment implementation, analysis code, and internal technical validation. Goutham Siripuram is the sole human author and is responsible for the manuscript, software, references, and scientific claims. AI assistance and the internal review do not constitute independent peer review.
-
-Status: prepared for author review and manual submission. Not submitted to arXiv; no arXiv identifier or project DOI exists in this release metadata. Moderation and endorsement, if requested, remain arXiv decisions.
+# arXiv metadata — author review required
+
+Title: Question-Only Selection of Bounded Reasoning Workflows: Baselines, Budget Transfer, and a Local Evaluation
+
+Author: Goutham Siripuram
+
+Suggested primary category: cs.AI
+Suggested secondary category: cs.LG (subject to arXiv classification)
+
+Abstract:
+Choosing a reasoning workflow from a question requires evidence that selection improves on a simpler fixed policy. We evaluate a question-only ridge baseline against a training-selected constant workflow using two local checkpoints, four workflows, two seeds, separate GSM8K training and test cohorts, and SVAMP transfer questions. The 4,096 recorded executions include a larger output-allowance condition on GSM8K. At the primary 512-token allowance, router-minus-constant utility is -0.00894 for Qwen3 and -0.04075 for Qwen2.5; the study does not establish a consistent routing advantage. A separately specified parsing heuristic also changes the interpretation of Qwen2.5 workflow rankings. The contribution is a constrained negative evaluation with explicit training isolation, budget transfer, and scoring sensitivity, rather than a new routing algorithm. The results motivate checking simple baselines and outcome definitions before attributing gains to workflow selection.
+
+Comments: 7 pages, 1 figure. Local benchmark evaluation; code and execution records accompany the research release.
+
+License recommendation: CC BY 4.0 for the manuscript, consistent with TMLR submission licensing. Author must select the license. Third-party assets retain their upstream licenses.
+
+Keywords: workflow selection; language models; local inference; evaluation; scoring sensitivity
+
+GitHub repository: https://github.com/GouthamSiripuram/agent-architecture-selection
+
+AI-assistance disclosure: Generative AI assisted drafting, code development, editing, and internal technical validation. The human author is responsible for the manuscript and its scientific claims. This assistance is not independent peer review.
+
+Status: prepared preprint; not submitted to arXiv or TMLR. No arXiv ID or DOI has been assigned. The anonymous review template's standard header does not mean a submission has occurred.

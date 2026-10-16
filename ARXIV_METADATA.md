@@ -2,7 +2,9 @@
 
 Title: Question-Only Selection of Bounded Reasoning Workflows: Baselines, Budget Transfer, and a Local Evaluation
 
-Author: Goutham Siripuram
+Authors: Goutham Siripuram; Akshitha Mulastam
+
+Author contributions: Both authors contributed equally to this work.
 
 Suggested primary category: cs.AI
 Suggested secondary category: cs.LG (subject to arXiv classification)
@@ -18,6 +20,6 @@ Keywords: workflow selection; language models; local inference; evaluation; scor
 
 GitHub repository: https://github.com/GouthamSiripuram/agent-architecture-selection
 
-AI-assistance disclosure: Generative AI assisted drafting, code development, editing, and internal technical validation. The human author is responsible for the manuscript and its scientific claims. This assistance is not independent peer review.
+AI-assistance disclosure: Generative AI assisted drafting, code development, editing, and internal technical validation. The human authors are responsible for the manuscript and its scientific claims. This assistance is not independent peer review.
 
 Status: prepared preprint; not submitted to arXiv or TMLR. No arXiv ID or DOI has been assigned. The anonymous review template's standard header does not mean a submission has occurred.

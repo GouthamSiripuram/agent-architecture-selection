@@ -1,12 +1,12 @@
 \documentclass[10pt]{article}
 \usepackage[preprint]{tmlr}
 \usepackage{amsmath,amssymb,booktabs,graphicx,hyperref,url}
-\hypersetup{pdfauthor={Goutham Siripuram},pdftitle={Question-Only Selection of Bounded Reasoning Workflows: Baselines, Budget Transfer, and a Local Evaluation}}
+\hypersetup{pdfauthor={Goutham Siripuram; Akshitha Mulastam},pdftitle={Question-Only Selection of Bounded Reasoning Workflows: Baselines, Budget Transfer, and a Local Evaluation}}
 \title{Question-Only Selection of Bounded Reasoning Workflows: Baselines, Budget Transfer, and a Local Evaluation}
-\author{\name Goutham Siripuram}
+\author{\name Goutham Siripuram \AND \name Akshitha Mulastam}
 \begin{document}
 \maketitle
-\begingroup\renewcommand{\thefootnote}{}\footnotetext{Generative AI assisted drafting, code development, editing, and internal technical validation. The human author is responsible for the manuscript and its scientific claims. This assistance is not independent peer review.}\endgroup
+\begingroup\renewcommand{\thefootnote}{}\footnotetext{Generative AI assisted drafting, code development, editing, and internal technical validation. The human authors are responsible for the manuscript and its scientific claims. This assistance is not independent peer review.}\endgroup
 \begin{abstract}
 Choosing a reasoning workflow from a question requires evidence that selection improves on a simpler fixed policy. We evaluate a question-only ridge baseline against a training-selected constant workflow using two local checkpoints, four workflows, two seeds, separate GSM8K training and test cohorts, and SVAMP transfer questions. The 4,096 recorded executions include a larger output-allowance condition on GSM8K. At the primary 512-token allowance, router-minus-constant utility is -0.00894 for Qwen3 and -0.04075 for Qwen2.5; the study does not establish a consistent routing advantage. A separately specified parsing heuristic also changes the interpretation of Qwen2.5 workflow rankings. The contribution is a constrained negative evaluation with explicit training isolation, budget transfer, and scoring sensitivity, rather than a new routing algorithm. The results motivate checking simple baselines and outcome definitions before attributing gains to workflow selection.
 \end{abstract}
@@ -207,7 +207,7 @@ These text-only workflows perform no external account actions. Their benchmark s
 
 \section{Conclusion}
 The completed local evaluation offers no consistent selection advantage for this question-only ridge baseline. Its stronger lesson is methodological: retain the training-selected constant comparator, separate hindsight references from deployable policies, and make scorer-dependent conclusions visible. This is a bounded empirical finding rather than a new routing algorithm or a general ranking of multi-agent architectures.
-\section*{Availability}\url{https://github.com/GouthamSiripuram/agent-architecture-selection}. This manuscript is a preprint; no arXiv identifier or peer-review acceptance is claimed.
+\section*{Author contributions}Goutham Siripuram and Akshitha Mulastam contributed equally to this work.\section*{Availability}\url{https://github.com/GouthamSiripuram/agent-architecture-selection}. This manuscript is a preprint; no arXiv identifier or peer-review acceptance is claimed.
 \bibliography{references}
 \bibliographystyle{tmlr}
 \end{document}
